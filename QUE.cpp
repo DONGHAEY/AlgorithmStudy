@@ -33,30 +33,30 @@ int main() {
 }
 QUEUE * createQueue( int n ){
 	QUEUE *temp = (QUEUE *) malloc( sizeof(QUEUE));
-	temp -> size = n;  // nÀ» Å©±â·Î ÇÏ´Â Å¥
+	temp -> size = n;  // nì„ í¬ê¸°ë¡œ í•˜ëŠ” í
 	temp -> rear =  -1;
 	temp -> front = -1;
-	temp -> buf = (ELEMENT *)malloc(sizeof(ELEMENT)); // Å©±â n À» °¡Áö´Â µ¿Àû ¹è¿­ »ý¼º
+	temp -> buf = (ELEMENT *)malloc(sizeof(ELEMENT)*n); // í¬ê¸° n ì„ ê°€ì§€ëŠ” ë™ì  ë°°ì—´ ìƒì„±
 	return temp;
 }
 int isFull( QUEUE *q ){
 	return q->rear == q->size-1;
 }
 void enQueue( QUEUE *q, ELEMENT data ){
-	 // °¡µæ Â÷ ÀÖ´Ù¸é "queue is full"ÀÌ¶ó°í Ãâ·Â
+	 // ê°€ë“ ì°¨ ìžˆë‹¤ë©´ "queue is full"ì´ë¼ê³  ì¶œë ¥
 	if(isFull(q)) {
 		printf("queue is full\n");
 	} else {
 		q->buf[++ q->rear] = data;
 	}
-	 // ¾Æ´Ï¸é rear¿¡ data »ðÀÔ
+	 // ì•„ë‹ˆë©´ rearì— data ì‚½ìž…
 }
 int isEmpty( QUEUE *q ){
-	// Å¥°¡ ºñ¾î ÀÖµû¸é rear°ú front ´Â ¾î¶² »óÅÂÀÏ±î?
+	// íê°€ ë¹„ì–´ ìžˆë”°ë©´ rearê³¼ front ëŠ” ì–´ë–¤ ìƒíƒœì¼ê¹Œ?
 	return q->front == q->rear;
 }
 ELEMENT deQueue( QUEUE *q ){
-	// ºñ¾î ÀÖ´Ù¸é "Queue is empty" Ãâ·ÂÇÏ°í 0 ¸®ÅÏ
+	// ë¹„ì–´ ìžˆë‹¤ë©´ "Queue is empty" ì¶œë ¥í•˜ê³  0 ë¦¬í„´
 	if(isEmpty(q)) {
 		printf("Queue is empty");
 		return 0;
@@ -64,18 +64,18 @@ ELEMENT deQueue( QUEUE *q ){
 		q->front += 1;
 		return q->buf[q->front];
 	}
-  // ¾Æ´Ï¸é frontÀ§Ä¡ÀÇ µ¥ÀÌÅÍ ¸®ÅÏ
+  // ì•„ë‹ˆë©´ frontìœ„ì¹˜ì˜ ë°ì´í„° ë¦¬í„´
 }
 void printAll( QUEUE *q ){
-	// front ºÎÅÍ rear ±îÁö ¸ðµç µ¥ÀÌÅÍ Ãâ·Â
+	// front ë¶€í„° rear ê¹Œì§€ ëª¨ë“  ë°ì´í„° ì¶œë ¥
 	for(int i=q->front+1; i<=q->rear; i++) {
 		printf("%d ", q->buf[i]);
 	}
 }
 
 void destroyQueue( QUEUE * q ){
-	// buf µ¿Àû ¸Þ¸ð¸® ÇØÁ¦
+	// buf ë™ì  ë©”ëª¨ë¦¬ í•´ì œ
 	free(q->buf);
-	// q µ¿Àû ¸Þ¸ð¸® ÇØÁ¦
+	// q ë™ì  ë©”ëª¨ë¦¬ í•´ì œ
 	free(q);
 }
