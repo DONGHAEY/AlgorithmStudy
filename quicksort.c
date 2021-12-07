@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define swap(x,y,t) (t)=(y) (y)=(x) (x)=(t)
+#define swap(x,y,t) ((t)=(y) (y)=(x) (x)=(t))
 
 int quicksort(int list[], left,right) {
     do {
