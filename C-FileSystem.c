@@ -11,7 +11,7 @@ int main(void)
 	if (file==NULL) {
 		printf("file open eror!\n");
 	}
-	fputs("╣╔юлем ют╥б : ", stdout);
+	fputs("б╣б╔ц─ц▄ц┘ц█ ц─ц■б╥ц┌ : ", stdout);
 	fgets(buf1, sizeof(buf1), stdin);
 	puts(buf1);
 	fgets(buf2, sizeof(buf2), file);
