@@ -1,3 +1,5 @@
+//ë‹¨ìˆœ ì´ì§„íƒìƒ‰ ì½”ë“œì…ë‹ˆë‹¤//
+
 #include <stdio.h>
 #define SIZE 6
 int arr[SIZE] = {0, 3, 7, 8, 10, 11};
@@ -16,8 +18,8 @@ int main() {
 	scanf("%d", &sv);
 	int re = search(0, SIZE-1);
 	if(re == -1) {
-		printf("Ã£À¸·Á´Â °ªÀÌ ¾øÀ½");
+		printf("ì°¾ìœ¼ë ¤ëŠ” ê°’ì´ ì—†ìŒ");
 	} else {
-		printf("%d¹ø ¸¸¿¡ Ã£¾ÒÀ½", re);
+		printf("%dë²ˆ ë§Œì— ì°¾ì•˜ìŒ", re);
 	} 
 }
