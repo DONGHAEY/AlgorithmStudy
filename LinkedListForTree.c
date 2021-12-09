@@ -23,7 +23,7 @@ void postorder( char *t, int n, int size ){
 		return ;
 	}
 	postorder(t, 2*n, size);
-	preorder(t, 2*n+1, size);
+	postorder(t, 2*n+1, size);
 	printf("%c", t[n]);
 }
 int main(){
