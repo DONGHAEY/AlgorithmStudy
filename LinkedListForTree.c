@@ -1,5 +1,7 @@
 #include<stdio.h>
 
+//링크드리스트를 통해 트리를 구현하기//
+
 void preorder( char *t, int n, int size ){
 	if(n>size || t[n]==0) {
 		return;
@@ -35,3 +37,4 @@ int main(){
 	postorder( tree, 1, size );
 	
 }
+
