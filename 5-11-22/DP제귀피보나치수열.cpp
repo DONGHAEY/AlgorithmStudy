@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int dp[201] = {0, 1, 1, 2};
+int dp[201] = {0, 0, 1, 2};
 
 int fibo(int n) 
 {
-	if(dp[n])return dp[n];
+	if(dp[n]) return dp[n];
 	return dp[n] = (fibo(n-1) + fibo(n-2))%10009;
 }
 
