@@ -11,7 +11,6 @@ void f(int k) {
 		printf("%d\n", k);
 }
 
-
 int main() {
 	int n;
 	scanf("%d %d", &m, &n);
